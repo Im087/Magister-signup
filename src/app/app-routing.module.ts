@@ -16,7 +16,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'sign',
+    path: 'signup',
     component: SignupComponent,
     children: [
       {

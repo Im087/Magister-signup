@@ -1,10 +1,10 @@
-/* load font from server */
-@font-face {
-    font-family: Quicksand;
-    src: url(../../assets/font/Quicksand/Quicksand-VariableFont_wght.ttf) format("truetype");
+#right-part {
+    background-color: honeydew;
+    overflow: hidden;
+    height: 100%;
 }
 
-#left-bar {
+#left-part {
     position: relative;
     background: url(../../assets/img/rama.png) no-repeat bottom #0A3868;
     float: left;
@@ -29,7 +29,6 @@
 }
 
 #step-list li {
-    color: #577294;
     line-height: 30px;
     margin-bottom: 36px;
     padding-left: 45px;
@@ -38,8 +37,9 @@
     background: url(../../assets/img/style-circle.png) no-repeat;
 }
 
-#step-list li a {
-    /* use the font here */
+#step-list li a:link, a:visited {
+    color: #577294;
+    text-decoration: none;
     font-family: Quicksand;
     font-style: normal;
     font-weight: bold;
@@ -47,12 +47,12 @@
     line-height: 22px;    
 }
 
-#step-list li:hover {
+#step-list li a:hover {
     /* change color when hovered */
     color: #FFFFFF;
 }
 
-#step-list li.active {
+#step-list li a.active {
     /* change color when activated */
     color: #FFFFFF;
 }

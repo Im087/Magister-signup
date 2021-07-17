@@ -1,13 +1,15 @@
-<div id="left-bar">
+<div id="left-part">
     <div id="logo"></div>
     <div id="active-circle"></div>
     <ul id="step-list">
-        <li><a>¿En qué te quieres especializar?</a></li>
-        <li><a>Horario y Modalidad</a></li>
-        <li><a>Tarifa</a></li>
-        <li><a>Datos personales</a></li>
-        <li><a>Dirección</a></li>
-        <li><a>Formas de pago</a></li>
+        <li><a [routerLink]="['/signup/rama']" routerLinkActive="active">¿En qué te quieres especializar?</a></li>
+        <li><a [routerLink]="['/signup/modalidad']" routerLinkActive="active">Horario y Modalidad</a></li>
+        <li><a [routerLink]="['/signup/tarifa']" routerLinkActive="active">Tarifa</a></li>
+        <li><a [routerLink]="['/signup/datos']" routerLinkActive="active">Datos personales</a></li>
+        <li><a [routerLink]="['/signup/direccion']" routerLinkActive="active">Dirección</a></li>
+        <li><a [routerLink]="['/signup/pago']" routerLinkActive="active">Formas de pago</a></li>
     </ul>
 </div>
-<router-outlet></router-outlet>
+<div id="right-part">
+    <router-outlet></router-outlet>
+</div>

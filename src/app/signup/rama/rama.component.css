@@ -1,0 +1,22 @@
+#title {
+    position: relative;
+    background-color: cornsilk;
+    height: 214px;
+    width: 551px;
+    margin: 0 auto 80px auto;
+}
+
+#title h2 {
+    background-color: darkgrey;
+    position: relative;
+    top: 144px;
+    width: 551px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 70px;
+    letter-spacing: -1px;
+    color: #577294;
+}
