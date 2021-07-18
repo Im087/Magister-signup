@@ -1,16 +1,28 @@
+h3{
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    color: #577294;
+}
+
+#container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 #title {
-    position: relative;
-    background-color: cornsilk;
-    height: 214px;
-    width: 551px;
-    margin: 0 auto 80px auto;
+    margin: 144px 196px 80px 196px;
+    align-self: center;
 }
 
 #title h2 {
-    background-color: darkgrey;
-    position: relative;
-    top: 144px;
     width: 551px;
+    margin: 0 auto;
 
     font-family: Quicksand;
     font-style: normal;
@@ -19,4 +31,163 @@
     line-height: 70px;
     letter-spacing: -1px;
     color: #577294;
+}
+
+form {
+    align-self: center;
+    margin-right: 75px;
+}
+
+#ramaprovincia {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 55vw;
+    margin: 0 0 68px 100px;
+}
+
+#ramaOption, #provinciaOption {
+    margin-right: 129px;
+}
+
+#ramaOption p, #provinciaOption p {
+    font-family: Quicksand;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 26px;
+    color: #577294;
+}
+
+#ramaOption select, #provinciaOption select {
+    width: 334px;
+    height: 48px;
+    margin-top: 24px;
+    line-height: 26px;
+    border: 1px solid #577294;
+    box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #57729466;
+}
+
+#ramaOption select option:not(:first-child), #provinciaOption select option:not(:first-child) {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #577294;
+}
+
+#alumno {
+    width: 554px;
+    margin: 0 0 68px 100px;
+}
+
+#alumno input {
+    display: none;
+}
+
+#alumno a, #material a {
+    text-decoration: none;
+    color: #0BC6FE;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+}
+
+#alumno p::after, #material p::after {
+    content: url(../../../assets/img/arrow.png);
+    position: relative;
+    left: 10px;
+    top: 5px;
+} 
+
+#alumno label {
+    display: inline-block;
+    width: 128px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #0A3868;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 24px 36px 0 auto;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #577294;
+}
+
+#alumno label:last-child {
+    width: 190px;
+}
+
+#alumno input:checked + label {
+    background-color: #0A3868;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#material {
+    width: 250px;
+    margin: 0 0 108px 100px;
+}
+
+#material input {
+    background: #A9D4EA;
+    border: 1px solid #A9D4EA;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 200px;
+    height: 48px;
+    margin-top: 24px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 48px;
+    text-align: center;
+    color: #0A3868;
+}
+
+#material input:hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#siguiente {
+    margin-bottom: 74px;
+    align-self: center;
+}
+
+#siguiente input {
+    background: #0BC6FE;
+    border: 1px solid #0BC6FE;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#siguiente input:hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }

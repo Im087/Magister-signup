@@ -15,6 +15,9 @@ export class RamaComponent implements OnInit {
   ramasDB: any[] = [];
   provinciasDB: any[] = [];
 
+  ramaTaken: string = '';
+  provinciaTaken: string = '';
+
   constructor(private db: AngularFirestore) {
     this.ramasRef = db.collection('ramas');
     this.provinciasRef = db.collection('provincias');

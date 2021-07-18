@@ -1,47 +1,43 @@
-<style>
-    #ramaprovincia {
-        background-color: darkkhaki;
-    }
-    #alumno input {
-        display: none;
-    }
-</style>
-<div id="title">
-    <h2>¿En qué te quieres especializar?</h2>
-</div>
-<div id="ramaprovincia">
-    <div>
-        <h3>Rama</h3>
-        <p>(Selecciona una opción)</p>
-        <select name="ramas" id="ramas">
-            <option value="" disabled selected hidden>Ej: Maestros - Audición y lenguaje</option>
-            <option [value]="rama.ramaName"  *ngFor="let rama of ramasDB">{{rama.ramaName}}</option>
-        </select>
+<div id="container">
+    <div id="title">
+        <h2>¿En qué te quieres especializar?</h2>
     </div>
-    <div>
-        <h3>Provincia</h3>
-        <p>(Selecciona una opción)</p>
-        <select name="provincias" id="provincias">
-            <option value="" disabled selected hidden>Ej: Madrid</option>
-            <option [value]="provincia.provinciName" *ngFor="let provincia of provinciasDB">{{provincia.provinciaName}}</option>
-        </select>
+    <form>    
+    <div id="ramaprovincia">
+        <div id="ramaOption">
+            <h3>Rama</h3>
+            <p>(Selecciona una opción)</p>
+            <select name="ramas" id="ramas" [(ngModel)]="ramaTaken">
+                <option value="" selected hidden>Ej: Maestros - Audición y lenguaje</option>
+                <option [value]="rama.ramaName" *ngFor="let rama of ramasDB">{{rama.ramaName}}</option>
+            </select>
+        </div>
+        <div id="provinciaOption">
+            <h3>Provincia</h3>
+            <p>(Selecciona una opción)</p>
+            <select name="provincias" id="provincias" [(ngModel)]="provinciaTaken">
+                <option value="" selected hidden>Ej: Madrid</option>
+                <option [value]="provincia.provinciaName" *ngFor="let provincia of provinciasDB">{{provincia.provinciaName}}</option>
+            </select>
+        </div>
     </div>
-</div>
-<div id="alumno">
-    <h3>¿Has sido alumn@ de Magister?</h3>
-    <p><a href="#">Consulta Condiciones</a></p>
-    <input type="radio" name="alumno" id="no">
-    <label for="no">No</label>
-    <input type="radio" name="alumno" id="si">
-    <label for="no">Sí</label>
-    <input type="radio" name="alumno" id="si2017">
-    <label for="no">Sí, después de 2017</label>
-</div>
-<div>
-    Entrega de material
-    <p><a href="#">Consulta Condiciones</a></p>
-    <input type="button" value="Material mes a mes">
-</div>
-<div>
-    <input type="button" value="siguiente">
+    <div id="alumno">
+        <h3>¿Has sido alumn@ de Magister?</h3>
+        <p><a href="#">Consulta Condiciones</a></p>
+        <input type="radio" name="alumno" id="no">
+        <label for="no">No</label>
+        <input type="radio" name="alumno" id="si">
+        <label for="si">Sí</label>
+        <input type="radio" name="alumno" id="si2017">
+        <label for="si2017">Sí, después de 2017</label>
+    </div>
+    <div id="material">
+        <h3>Entrega de material</h3>
+        <p><a href="#">Consulta Condiciones</a></p>
+        <input type="button" value="Material mes a mes">
+    </div>
+    </form> 
+    <div id="siguiente">
+        <input type="button" value="Siguiente">
+    </div>
 </div>

@@ -1,5 +1,4 @@
 #right-part {
-    background-color: honeydew;
     overflow: hidden;
     height: 100%;
 }
@@ -11,15 +10,6 @@
     width: 500px;
     height: 100%;
 }
-
-/* #left-bar {
-    position: relative;
-    background: url(../../assets/img/magister-logo.png) no-repeat 111px 77px #0A3868;
-    background-size: 275px 88px;
-    float: left;
-    width: 500px;
-    height: 100%;
-} */
 
 #step-list {
     position: absolute;
