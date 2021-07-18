@@ -2,42 +2,44 @@
     <div id="title">
         <h2>¿En qué te quieres especializar?</h2>
     </div>
-    <form>    
-    <div id="ramaprovincia">
-        <div id="ramaOption">
-            <h3>Rama</h3>
-            <p>(Selecciona una opción)</p>
-            <select name="ramas" id="ramas" [(ngModel)]="ramaTaken">
-                <option value="" selected hidden>Ej: Maestros - Audición y lenguaje</option>
-                <option [value]="rama.ramaName" *ngFor="let rama of ramasDB">{{rama.ramaName}}</option>
-            </select>
+    <form id="form">    
+        <div id="ramaprovincia">
+            <div id="ramaOption">
+                <h3>Rama</h3>
+                <p>(Selecciona una opción)</p>
+                <select name="ramas" id="ramas" [(ngModel)]="ramaTaken">
+                    <option value="" selected hidden>Ej: Maestros - Audición y lenguaje</option>
+                    <option [value]="rama.ramaName" *ngFor="let rama of ramasDB">{{rama.ramaName}}</option>
+                </select>
+            </div>
+            <div id="provinciaOption">
+                <h3>Provincia</h3>
+                <p>(Selecciona una opción)</p>
+                <select name="provincias" id="provincias" [(ngModel)]="provinciaTaken">
+                    <option value="" selected hidden>Ej: Madrid</option>
+                    <option [value]="provincia.provinciaName" *ngFor="let provincia of provinciasDB">{{provincia.provinciaName}}</option>
+                </select>
+            </div>
         </div>
-        <div id="provinciaOption">
-            <h3>Provincia</h3>
-            <p>(Selecciona una opción)</p>
-            <select name="provincias" id="provincias" [(ngModel)]="provinciaTaken">
-                <option value="" selected hidden>Ej: Madrid</option>
-                <option [value]="provincia.provinciaName" *ngFor="let provincia of provinciasDB">{{provincia.provinciaName}}</option>
-            </select>
+        <div id="alumno">
+            <h3>¿Has sido alumn@ de Magister?</h3>
+            <p><a class="arrow" href="#">Consulta Condiciones</a></p>
+            <div class="flexbox">
+                <input class="radio" type="radio" name="alumno" id="no">
+                <label class="radio" for="no">No</label>
+                <input class="radio" type="radio" name="alumno" id="si">
+                <label class="radio" for="si">Sí</label>
+                <input class="radio" type="radio" name="alumno" id="si2017">
+                <label class="radio" for="si2017">Sí, después de 2017</label>
+            </div>
         </div>
-    </div>
-    <div id="alumno">
-        <h3>¿Has sido alumn@ de Magister?</h3>
-        <p><a href="#">Consulta Condiciones</a></p>
-        <input type="radio" name="alumno" id="no">
-        <label for="no">No</label>
-        <input type="radio" name="alumno" id="si">
-        <label for="si">Sí</label>
-        <input type="radio" name="alumno" id="si2017">
-        <label for="si2017">Sí, después de 2017</label>
-    </div>
-    <div id="material">
-        <h3>Entrega de material</h3>
-        <p><a href="#">Consulta Condiciones</a></p>
-        <input type="button" value="Material mes a mes">
-    </div>
+        <div id="material">
+            <h3>Entrega de material</h3>
+            <p><a class="arrow" href="#">Consulta Condiciones</a></p>
+            <input type="button" value="Material mes a mes">
+        </div>
     </form> 
-    <div id="siguiente">
-        <input type="button" value="Siguiente">
+    <div id="button">
+        <input class="next-btn" type="button" value="Siguiente" (click)="nextPage()">
     </div>
 </div>

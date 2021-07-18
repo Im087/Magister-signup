@@ -12,4 +12,8 @@ export class TarifaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  nextPage() { }
+
+  previousPage() {}
+
 }

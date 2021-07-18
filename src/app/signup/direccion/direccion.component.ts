@@ -12,4 +12,8 @@ export class DireccionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  nextPage() {}
+
+  previousPage() {}
+
 }

@@ -1,1 +1,29 @@
-<p>datos works!</p>
+<div id="container">
+    <div id="title">
+        <h2>Tus datos personales</h2>
+    </div>
+    <form id="form">
+        <div id="nombre">
+            <h3>Nombre completo</h3>
+            <input type="text" name="nombre" placeholder="Ej: Camila Perez Sánchez">
+        </div>
+        <div class="flexbox">
+            <div id="dni">
+                <h3>DNI - NIE</h3>
+                <input type="text" name="dni" placeholder="Ej: Y56748659P">
+            </div>
+            <div id="movil">
+                <h3>Móvil</h3>
+                <input type="text" name="movil" placeholder="Ej: 654789735">
+            </div>
+            <div id="email">
+                <h3>Email</h3>
+                <input type="email" name="email" placeholder="Ej: camila.per.san@gmail.com">
+            </div>
+        </div>
+    </form>
+    <div id="button">
+        <input class="next-btn" type="button" value="Siguiente" (click)="nextPage()">
+        <input class="previous-btn" type="button" value="Volver atrás" (click)="previousPage()">
+    </div>
+</div>

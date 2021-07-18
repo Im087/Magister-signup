@@ -1,1 +1,32 @@
-<p>pago works!</p>
+<div id="container">
+    <div id="title">
+        <h2>Forma de pago</h2>
+    </div>
+    <form id="form">
+        <div id="formapago">
+            <h3>¿Cómo prefieres abonar tu primer pago?</h3>
+            <div class="flexbox">
+                <input class="radio" type="radio" name="formapago" id="tarjeta">
+                <label class="radio" for="tarjeta">Tarjeta de crédito/débito (recomendado)</label>
+                <input class="radio" type="radio" name="formapago" id="transferencia">
+                <label class="radio" for="transferencia">Transferencia bancaria</label>
+            </div>
+            <p><a class="arrow" href="#">Detalles sobre forma de pago y proceso post pago</a></p>
+        </div>
+        <div id="recomendado">
+            <h3>¿Vienes recomendado por alguien?</h3>
+            <div class="flexbox">
+                <input class="radio" type="radio" name="recomendado" id="no">
+                <label class="radio" for="no">No</label>
+                <input class="radio" type="radio" name="recomendado" id="si">
+                <label class="radio" for="si">Sí</label>
+            </div>
+            <p><a class="arrow" href="#">Ver información legal</a></p>
+        </div>
+    </form> 
+    <div id="button">
+        <input class="next-btn" type="button" value="Siguiente" (click)="nextPage()">
+        <input class="previous-btn" type="button" value="Volver atrás" (click)="previousPage()">
+    </div>
+</div>
+

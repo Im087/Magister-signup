@@ -14,3 +14,174 @@ body, html {
     font-family: Quicksand;
     src: url(./assets/font/Quicksand/Quicksand-VariableFont_wght.ttf) format("truetype");
 }
+
+#container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h2 {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 70px;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #577294;
+}
+
+h3, p {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    color: #577294;
+}
+
+select {
+    box-sizing: border-box;
+    height: 48px;
+    margin-top: 24px;
+    line-height: 26px;
+    padding: 0 16px 0 16px;
+    border: 1px solid #577294;
+    box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #57729466;
+}
+
+/* all the options except the first one */
+option:not(:first-child) {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #577294;
+}
+
+/* hide the default radio circle */
+input.radio {
+    display: none;
+}
+
+a.arrow {
+    text-decoration: none;
+    color: #0BC6FE;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    text-align: center;
+}
+
+/* add an image just after the link */
+a.arrow::after {
+    content: url(../src/assets/img/arrow.png);
+    position: relative;
+    left: 10px;
+    top: 5px;
+}
+
+/* make the label look like a button */
+label.radio {
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #0A3868;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    color: #577294;
+}
+
+label.radio:hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* check radio when the corresponding label is clicked*/
+input.radio:checked+label {
+    background-color: #0A3868;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+input.next-btn {
+    background: #0BC6FE;
+    border: 1px solid #0BC6FE;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    display: block;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+input.next-btn:hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+input.previous-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    width: 200px;
+    height: 40px;
+    display: block;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    color: #0BC6FE;
+}
+
+input.previous-btn:hover {
+    border-color: #0BC6FE;
+}
+
+input[type=text], input[type=email] {
+    box-sizing: border-box;
+    height: 48px;
+    margin-top: 24px;
+    line-height: 26px;
+    padding: 0 16px 0 16px;
+    border: 1px solid #577294;
+    box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 26px;
+    color: #577294;
+}
+
+input::placeholder {
+    color: #57729466;
+}
+

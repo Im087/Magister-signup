@@ -1,0 +1,137 @@
+#title {
+    background-color: wheat;
+    margin: 144px 368px 66px 368px;
+    align-self: center;
+}
+
+#title h2 {
+    width: 206px;
+    margin: 0 auto;
+    line-height: 70px;
+}
+
+#form {
+    background-color: honeydew;
+    width: 100%;
+    max-width: 1600px;
+    align-self: center;
+}
+
+#comunidad {
+    background-color: seashell;
+    margin: 0 100px 68px 100px;
+}
+
+#comunidad select {
+    width: 100%;
+    min-width: 788px;
+}
+
+#direccion {
+    background-color: ivory;
+    margin: 0 100px 68px 100px;
+}
+
+#direccion input {
+    width: 100%;
+    min-width: 788px;
+}
+
+div.flexbox {
+    background-color: lightgray;
+    margin: 0 100px 70px 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.flexbox > div {
+    background-color: whitesmoke;
+    margin-right: 54px;
+    flex: 1 0 auto;
+}
+
+div.flexbox > div:last-child {
+    margin-right: 0;
+}
+
+div.flexbox > div > input {
+    width: 100%;
+    min-width: 216px;
+}
+
+#condicion {
+    background-color:wheat;
+    min-width: 788px;
+    margin: 0 100px 60px 100px;
+}
+
+label.info {
+    position: relative;
+    padding-left: 46px;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -1px;
+    color: #577294;
+}
+
+label.info:first-of-type {
+    margin-right: 204px;
+}
+
+label.info a {
+    text-decoration: none;
+    color: #0BC6FE;
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: -1px;
+    text-align: center;
+}
+
+/* hide the default checkbox */
+input.info {
+    display: none;
+}
+
+/* create a costumed checkbox */
+span.info {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    background: #FFFFFF;
+    border: 1px solid #0A3868;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+/* add a hidden tick to the costumed checkbox */
+span.info:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  width: 6px;
+  height: 10px;
+  border: solid #0A3868;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+/* display the tick when checked */
+input.info:checked ~ span.info:after {
+    display: block;
+}
+
+#button {
+    margin-bottom: 39px;
+    align-self: center;
+}

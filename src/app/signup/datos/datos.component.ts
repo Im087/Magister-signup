@@ -12,4 +12,8 @@ export class DatosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  nextPage() {}
+
+  previousPage() {}
+
 }

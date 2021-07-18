@@ -1,0 +1,55 @@
+#title {
+    background-color: wheat;
+    margin: 144px 288px 178px 288px;
+    align-self: center;
+}
+
+#title h2 {
+    width: 367px;
+    margin: 0 auto;
+    line-height: 70px;
+}
+
+#form {
+    background-color: honeydew;
+    width: 100%;
+    max-width: 1600px;
+    align-self: center;
+}
+
+#nombre {
+    background-color: ivory;
+    margin: 0 100px 68px 100px;
+}
+
+#nombre input {
+    width: 100%;
+    min-width: 788px;
+}
+
+div.flexbox {
+    background-color: lightgray;
+    margin: 0 100px 240px 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.flexbox > div {
+    background-color: whitesmoke;
+    margin-right: 54px;
+    flex: 1 0 auto;
+}
+
+div.flexbox > div:last-child {
+    margin-right: 0;
+}
+
+div.flexbox > div > input {
+    width: 100%;
+    min-width: 216px;
+}
+
+#button {
+    margin-bottom: 39px;
+    align-self: center;
+}

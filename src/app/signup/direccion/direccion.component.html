@@ -1,1 +1,47 @@
-<p>direccion works!</p>
+<div id="container">
+    <div id="title">
+        <h2>Tu dirección</h2>
+    </div>
+    <form id="form">
+        <div id="comunidad">
+            <h3>Comunidad de Exámen</h3>
+            <p>(Selecciona una opción)</p>
+            <select name="comunidad">
+                <option value="" selected hidden>Ej: Madrid</option>
+                <option value="Madrid">Madrid</option>
+            </select>
+        </div>
+        <div id="direccion">
+            <h3>Dirección</h3>
+            <input type="text" name="nombre" placeholder="Ej: Calle Ramiro de Maxtu, 10, 4D">
+        </div>
+        <div class="flexbox">
+            <div id="localidad">
+                <h3>Localidad</h3>
+                <input type="text" name="localidad" placeholder="Ej: Madrid">
+            </div>
+            <div id="provincia">
+                <h3>Provincia</h3>
+                <input type="text" name="provincia" placeholder="Ej: Madrid">
+            </div>
+            <div id="cp">
+                <h3>Código Postal</h3>
+                <input type="email" name="cp" placeholder="Ej: 28040">
+            </div>
+        </div>
+        <div id="condicion">     
+            <label class="info"for="legal">Acepto la <a href="#">información legal</a>
+                <input class="info" type="checkbox" name="legal" id="legal">
+                <span class="info"></span>
+            </label>
+            <label class="info" for="proteccion">Acepto la <a href="#">protección de datos</a>
+                <input class="info" type="checkbox" name="proteccion" id="proteccion">
+                <span class="info"></span>
+            </label>
+        </div>
+    </form>
+    <div id="button">
+        <input class="next-btn" type="button" value="Siguiente" (click)="nextPage()">
+        <input class="previous-btn" type="button" value="Volver atrás" (click)="previousPage()">
+    </div>
+</div>

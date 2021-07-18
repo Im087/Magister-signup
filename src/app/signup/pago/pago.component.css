@@ -1,0 +1,70 @@
+#title {
+    background-color: honeydew;
+    margin: 144px 337px 109px 337px;
+    align-self: center;
+}
+
+#title h2 {
+    width: 269px;
+    margin: 0 auto;
+}
+
+#form {
+    background-color: lavender;
+    width: 100%;
+    max-width: 1600px;
+    align-self: center;
+}
+
+#formapago {
+    background-color: whitesmoke;
+    margin: 0 100px 72px 100px;
+}
+
+#formapago .flexbox {
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 300px;
+}
+
+#formapago label {
+    width: 337px;
+    margin: 24px 70px 0 0;
+    flex: 0 0 auto;
+}
+
+#formapago label:last-child {
+    margin-right: 0;
+}
+
+#formapago p {
+    margin-top: 25px;
+}
+
+#recomendado {
+    background-color: whitesmoke;
+    margin: 0 100px 170px 100px;
+}
+
+#recomendado .flexbox {
+    background-color: beige;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 800px;
+}
+
+#recomendado label {
+    width: 128px;
+    margin: 24px 36px 0 0;
+    flex: 0 0 auto;
+}
+
+#recomendado p {
+    margin-top: 50px;
+}
+
+#button {
+    margin-bottom: 39px;
+    align-self: center;
+}

@@ -12,4 +12,8 @@ export class ModalidadComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  nextPage() {}
+
+  previousPage() {}
+
 }

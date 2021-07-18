@@ -1,0 +1,34 @@
+#title {
+    background-color: azure;
+    margin: 144px 302px 178px 302px;
+    align-self: center;
+}
+
+#title h2 {
+    width: 338px;
+    margin: 0 auto;
+    line-height: 70px;
+}
+
+#form {
+    background-color: beige;
+    width: 100%;
+    max-width: 1600px;
+    align-self: center;
+}
+
+#tarifa {
+    background-color: wheat;
+    margin: 0 100px 259px 100px;
+}
+
+#tarifa label.radio {
+    display: block;
+    min-width: 767px;
+    margin: 24px 0 -8px 0;
+}
+
+#button {
+    margin-bottom: 39px;
+    align-self: center;
+}

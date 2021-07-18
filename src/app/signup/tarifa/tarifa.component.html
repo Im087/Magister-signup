@@ -1,1 +1,21 @@
-<p>tarifa works!</p>
+<div id="container">
+    <div id="title">
+        <h2>Selecciona tú tarifa </h2>
+    </div>
+    <form id="form">
+        <div id="tarifa">
+            <h3>Tarifas</h3>
+            <p>(Selecciona una opción)</p>
+            <input class="radio" type="radio" name="tarifa" id="tarifaA">
+            <label class="radio" for="tarifaA">TarifaA Matrícula 101.00 euros</label>
+            <input class="radio" type="radio" name="tarifa" id="tarifaB">
+            <label class="radio" for="tarifaB">TarifaB Matrícula 115.00 euros </label>
+            <input class="radio" type="radio" name="tarifa" id="tarifaC">
+            <label class="radio" for="tarifaC">TarifaC Matrícula 216.00 euros </label>         
+        </div>
+    </form>
+    <div id="button">
+        <input class="next-btn" type="button" value="Siguiente" (click)="nextPage()">
+        <input class="previous-btn" type="button" value="Volver atrás" (click)="previousPage()">
+    </div>
+</div>

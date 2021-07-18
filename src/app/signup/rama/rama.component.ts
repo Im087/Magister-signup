@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+
 import { Ramas } from '../../models/ramas';
 import { Provincias } from '../../models/provincias';
 
@@ -10,6 +12,8 @@ import { Provincias } from '../../models/provincias';
 })
 export class RamaComponent implements OnInit {
 
+  nextPath: string = 'modalidad';
+
   ramasRef: AngularFirestoreCollection<Ramas> = null;
   provinciasRef: AngularFirestoreCollection<Provincias> = null;
   ramasDB: any[] = [];
@@ -18,7 +22,7 @@ export class RamaComponent implements OnInit {
   ramaTaken: string = '';
   provinciaTaken: string = '';
 
-  constructor(private db: AngularFirestore) {
+  constructor(private db: AngularFirestore, private router: Router) {
     this.ramasRef = db.collection('ramas');
     this.provinciasRef = db.collection('provincias');
   }
@@ -41,6 +45,10 @@ export class RamaComponent implements OnInit {
         this.provinciasDB.push(doc.data());
       });
     });
+  }
+
+  nextPage() {
+    this.router.navigate(['/signup', this.nextPath]);
   }
 
 }
