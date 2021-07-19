@@ -7,9 +7,9 @@
         <li><a [routerLink]="['/signup/tarifa']" routerLinkActive="active">Tarifa</a></li>
         <li><a [routerLink]="['/signup/datos']" routerLinkActive="active">Datos personales</a></li>
         <li><a [routerLink]="['/signup/direccion']" routerLinkActive="active">Dirección</a></li>
-        <li><a [routerLink]="['/signup/pago']" routerLinkActive="active">Formas de pago</a></li>
+        <li><a [routerLink]="['/signup/pago']" routerLinkActive="active">Forma de pago</a></li>
     </ul>
 </div>
 <div id="right-part">
-    <router-outlet></router-outlet>
+    <router-outlet (deactivate)="getFormData($event)"></router-outlet>
 </div>
