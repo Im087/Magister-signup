@@ -5,25 +5,25 @@
     <form id="form">
         <div id="nombre">
             <h3>Nombre completo</h3>
-            <input type="text" name="nombre" placeholder="Ej: Camila Perez Sánchez">
+            <input type="text" name="nombre" placeholder="Ej: Camila Perez Sánchez" value="abc" [(ngModel)]="formData.nombre">
         </div>
         <div class="flexbox">
             <div id="dni">
                 <h3>DNI - NIE</h3>
-                <input type="text" name="dni" placeholder="Ej: Y56748659P">
+                <input type="text" name="dni" placeholder="Ej: Y56748659P" [(ngModel)]="formData.dni">
             </div>
             <div id="movil">
                 <h3>Móvil</h3>
-                <input type="text" name="movil" placeholder="Ej: 654789735">
+                <input type="text" name="movil" placeholder="Ej: 654789735" [(ngModel)]="formData.movil">
             </div>
             <div id="email">
                 <h3>Email</h3>
-                <input type="email" name="email" placeholder="Ej: camila.per.san@gmail.com">
+                <input type="email" name="email" placeholder="Ej: camila.per.san@gmail.com" [(ngModel)]="formData.email">
             </div>
         </div>
     </form>
     <div id="button">
-        <input class="next-btn" type="button" value="Siguiente" (click)="nextPage()">
-        <input class="previous-btn" type="button" value="Volver atrás" (click)="previousPage()">
+        <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath)">
+        <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath)">
     </div>
 </div>

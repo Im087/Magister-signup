@@ -1,5 +1,4 @@
 #title {
-    background-color: wheat;
     margin: 144px 288px 178px 288px;
     align-self: center;
 }
@@ -11,14 +10,12 @@
 }
 
 #form {
-    background-color: honeydew;
     width: 100%;
     max-width: 1600px;
     align-self: center;
 }
 
 #nombre {
-    background-color: ivory;
     margin: 0 100px 68px 100px;
 }
 
@@ -28,14 +25,12 @@
 }
 
 div.flexbox {
-    background-color: lightgray;
     margin: 0 100px 240px 100px;
     display: flex;
     justify-content: space-between;
 }
 
 div.flexbox > div {
-    background-color: whitesmoke;
     margin-right: 54px;
     flex: 1 0 auto;
 }

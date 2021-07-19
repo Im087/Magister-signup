@@ -1,5 +1,4 @@
 #title {
-    background-color: wheat;
     margin: 144px 169px 80px 169px;
     align-self: center;
 }
@@ -11,18 +10,15 @@
 }
 
 #form {
-    background-color: honeydew;
     max-width: 1600px;
     align-self: center;
 }
 
 #modalidad {
-    background-color: ivory;
     margin: 0 25px 68px 100px;
 }
 
 #modalidad .flexbox {
-    background-color: lightgray;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -35,7 +31,6 @@
 }
 
 #horario {
-    background-color: lavender;
     margin: 0 100px 85px 100px;
 }
 

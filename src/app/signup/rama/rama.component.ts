@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
-import { Ramas } from '../../models/ramas';
-import { Provincias } from '../../models/provincias';
+import { FirestoreService } from '../../services/firestore.service';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-rama',
@@ -14,41 +13,51 @@ export class RamaComponent implements OnInit {
 
   nextPath: string = 'modalidad';
 
-  ramasRef: AngularFirestoreCollection<Ramas> = null;
-  provinciasRef: AngularFirestoreCollection<Provincias> = null;
-  ramasDB: any[] = [];
-  provinciasDB: any[] = [];
+  // save firestore data
+  ramasData: any[] = [];
+  provinciasData: any[] = [];
 
-  ramaTaken: string = '';
-  provinciaTaken: string = '';
-
-  constructor(private db: AngularFirestore, private router: Router) {
-    this.ramasRef = db.collection('ramas');
-    this.provinciasRef = db.collection('provincias');
+  // save client data in this object
+  formData: any = {
+    rama: '',
+    provincia: '',
+    antiguoAlumno: ''
   }
+
+  constructor(
+    private firestore: FirestoreService,
+    private storage: StorageService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
-    this.get();
+    this.getData('ramas');
+    this.getData('provincias');
+
+    // get storage data to recover already filled form when initializing
+    this.storage.getStorage(this.formData);
+    
   }
 
-  get() {
-    this.ramasRef.get().subscribe((data) => {
-      data.docs.forEach(doc => {
-        console.log(doc.data());
-        this.ramasDB.push(doc.data());
-      });
-    });
-
-    this.provinciasRef.get().subscribe((data) => {
-      data.docs.forEach(doc => {
-        console.log(doc.data());
-        this.provinciasDB.push(doc.data());
-      });
+  // retreive firestore data and add them in an array
+  getData(path) {
+    this.firestore.readFirestore(path).subscribe({
+      next: (data: any) => {
+        data.docs.forEach(doc => {
+          eval('this.' + path + 'Data').push(doc.data()); // generate dynamic variable name with eval()
+        });
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
     });
   }
 
-  nextPage() {
-    this.router.navigate(['/signup', this.nextPath]);
+  goTo(path) {
+    // save data to storage before leaving the page 
+    this.storage.addStorage(this.formData);
+
+    this.router.navigate(['/signup', path]);
   }
 
 }

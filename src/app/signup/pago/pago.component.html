@@ -6,9 +6,9 @@
         <div id="formapago">
             <h3>¿Cómo prefieres abonar tu primer pago?</h3>
             <div class="flexbox">
-                <input class="radio" type="radio" name="formapago" id="tarjeta">
+                <input class="radio" type="radio" name="formapago" id="tarjeta" value="tarjeta" [(ngModel)]="formData.pago">
                 <label class="radio" for="tarjeta">Tarjeta de crédito/débito (recomendado)</label>
-                <input class="radio" type="radio" name="formapago" id="transferencia">
+                <input class="radio" type="radio" name="formapago" id="transferencia" value="transferencia" [(ngModel)]="formData.pago">
                 <label class="radio" for="transferencia">Transferencia bancaria</label>
             </div>
             <p><a class="arrow" href="#">Detalles sobre forma de pago y proceso post pago</a></p>
@@ -16,17 +16,17 @@
         <div id="recomendado">
             <h3>¿Vienes recomendado por alguien?</h3>
             <div class="flexbox">
-                <input class="radio" type="radio" name="recomendado" id="no">
+                <input class="radio" type="radio" name="recomendado" id="no" value="no" [(ngModel)]="formData.recomendado">
                 <label class="radio" for="no">No</label>
-                <input class="radio" type="radio" name="recomendado" id="si">
+                <input class="radio" type="radio" name="recomendado" id="si" value="si" [(ngModel)]="formData.recomendado">
                 <label class="radio" for="si">Sí</label>
             </div>
             <p><a class="arrow" href="#">Ver información legal</a></p>
         </div>
     </form> 
     <div id="button">
-        <input class="next-btn" type="button" value="Siguiente" (click)="nextPage()">
-        <input class="previous-btn" type="button" value="Volver atrás" (click)="previousPage()">
+        <input class="next-btn" type="button" value="Enviar" (click)="submit()">
+        <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath)">
     </div>
 </div>
 

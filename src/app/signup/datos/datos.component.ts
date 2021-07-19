@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-datos',
@@ -7,13 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatosComponent implements OnInit {
 
-  constructor() { }
+  nextPath: string = 'direccion';
+  previousPath: string = 'tarifa';
 
-  ngOnInit(): void {
+  // save client data in this object
+  formData: any = {
+    nombre: '',
+    dni: '',
+    movil: '',
+    email: ''
   }
 
-  nextPage() {}
+  constructor(
+    private storage: StorageService,
+    private router: Router
+  ) { }
 
-  previousPage() {}
+  ngOnInit(): void {
+    // get storage data to recover already filled form when initializing
+    this.storage.getStorage(this.formData);
+    
+  }
+
+  goTo(path) {
+    // save data to storage before leaving the page 
+    this.storage.addStorage(this.formData);
+
+    this.router.navigate(['/signup', path]);
+  }
 
 }

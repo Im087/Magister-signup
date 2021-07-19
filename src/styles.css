@@ -116,7 +116,7 @@ label.radio:hover {
 }
 
 /* check radio when the corresponding label is clicked*/
-input.radio:checked+label {
+input.radio:checked + label.radio {
     background-color: #0A3868;
     color: #FFFFFF;
     font-weight: bold;

@@ -1,4 +1,4 @@
 export interface Ramas {
     ramaID: number;
-    ramaName: string
+    ramaName: string;
 }

@@ -1,5 +1,4 @@
 #title {
-    background-color: honeydew;
     margin: 144px 196px 80px 196px;
     align-self: center;
 }
@@ -10,21 +9,18 @@
 }
 
 #form {
-    background-color: lavender;
     width: 100%;
     max-width: 1600px;
     align-self: center;
 }
 
 #ramaprovincia {
-    background-color: lightgray;
     display: flex;
     justify-content: space-between;
     margin: 0 100px 68px 100px;
 }
 
 #ramaOption, #provinciaOption {
-    background-color: wheat;
     margin-right: 129px;
     flex: 1 0 auto;
 }
@@ -34,12 +30,10 @@
 }
 
 #alumno {
-    background-color: whitesmoke;
     margin: 0 100px 68px 100px;
 }
 
 #alumno .flexbox {
-    background-color: beige;
     display: flex;
     justify-content: space-between;
     margin-right: 600px;
@@ -56,7 +50,6 @@
 }
 
 #material {
-    background-color: azure;
     margin: 0 100px 90px 100px;
 }
 

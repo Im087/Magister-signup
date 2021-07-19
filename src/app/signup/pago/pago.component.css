@@ -1,5 +1,4 @@
 #title {
-    background-color: honeydew;
     margin: 144px 337px 109px 337px;
     align-self: center;
 }
@@ -10,19 +9,16 @@
 }
 
 #form {
-    background-color: lavender;
     width: 100%;
     max-width: 1600px;
     align-self: center;
 }
 
 #formapago {
-    background-color: whitesmoke;
     margin: 0 100px 72px 100px;
 }
 
 #formapago .flexbox {
-    background-color: beige;
     display: flex;
     justify-content: space-between;
     margin-right: 300px;
@@ -43,12 +39,10 @@
 }
 
 #recomendado {
-    background-color: whitesmoke;
     margin: 0 100px 170px 100px;
 }
 
 #recomendado .flexbox {
-    background-color: beige;
     display: flex;
     justify-content: space-between;
     margin-right: 800px;

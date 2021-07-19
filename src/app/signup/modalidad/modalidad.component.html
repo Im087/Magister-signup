@@ -7,30 +7,24 @@
             <h3>Modalidad</h3>
             <p>(Selecciona una opción)</p>
             <div class="flexbox">
-                <input class="radio" type="radio" name="modalidad" id="presencial">
-                <label class="radio" for="presencial">Presencial 2020/2021</label>
-                <input class="radio" type="radio" name="modalidad" id="semipresencial">
-                <label class="radio" for="semipresencial">Semiresencial 2020/2021</label>
-                <input class="radio" type="radio" name="modalidad" id="videoconferencia">
-                <label class="radio" for="videoconferencia">Videoconferencia en directo 2020/2021</label>
-                <input class="radio" type="radio" name="modalidad" id="lomloe">
-                <label class="radio" for="lomloe">Adaptación a la Lomloe</label>
+                <div *ngFor="let modalidad of modalidadesData">
+                    <input class="radio" type="radio" name="modalidad" [id]="modalidad.modalidadName" [value]="modalidad.modalidadName" [(ngModel)]="formData.modalidad">
+                    <label class="radio" [for]="modalidad.modalidadName">{{modalidad.modalidadName}}</label>
+                </div>
             </div>
         </div>
         <div id="horario">
             <h3>Horario</h3>
             <p>(Selecciona una opción)</p>
-                <input class="radio" type="radio" name="horario" id="horarioA">
-                <label class="radio" for="horarioA">1 Clase al mes Prácticos y Programación sábados por mañana. Grupo 1 de 10 a 14 horas</label>
-                <input class="radio" type="radio" name="horario" id="horarioB">
-                <label class="radio" for="horarioB">1 Clase al mes Prácticos y Programación sábados por mañana. Grupo 1 de 10 a 14 horas</label>
-                <input class="radio" type="radio" name="horario" id="horarioC">
-                <label class="radio" for="horarioC">1 Clase al mes Prácticos y Programación sábados por mañana. Grupo 1 de 10 a 14 horas</label>
+            <div *ngFor="let horario of horariosData">
+                <input class="radio" type="radio" name="horario" [id]="horario.horarioID" [value]="horario.horarioName" [(ngModel)]="formData.horario">
+                <label class="radio" [for]="horario.horarioID">{{horario.horarioName}}</label>
             </div>
+        </div>
     </form>
     <div id="button">
-        <input class="next-btn" type="button" value="Siguiente" (click)="nextPage()">
-        <input class="previous-btn" type="button" value="Volver atrás" (click)="previousPage()">
+        <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath)">
+        <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath)">
     </div>
 </div>
 

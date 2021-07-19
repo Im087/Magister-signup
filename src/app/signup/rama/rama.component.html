@@ -7,17 +7,17 @@
             <div id="ramaOption">
                 <h3>Rama</h3>
                 <p>(Selecciona una opción)</p>
-                <select name="ramas" id="ramas" [(ngModel)]="ramaTaken">
+                <select name="ramas" id="ramas" [(ngModel)]="formData.rama">
                     <option value="" selected hidden>Ej: Maestros - Audición y lenguaje</option>
-                    <option [value]="rama.ramaName" *ngFor="let rama of ramasDB">{{rama.ramaName}}</option>
+                    <option [value]="rama.ramaName" *ngFor="let rama of ramasData">{{rama.ramaName}}</option>
                 </select>
             </div>
             <div id="provinciaOption">
                 <h3>Provincia</h3>
                 <p>(Selecciona una opción)</p>
-                <select name="provincias" id="provincias" [(ngModel)]="provinciaTaken">
+                <select name="provincias" id="provincias" [(ngModel)]="formData.provincia">
                     <option value="" selected hidden>Ej: Madrid</option>
-                    <option [value]="provincia.provinciaName" *ngFor="let provincia of provinciasDB">{{provincia.provinciaName}}</option>
+                    <option [value]="provincia.provinciaName" *ngFor="let provincia of provinciasData">{{provincia.provinciaName}}</option>
                 </select>
             </div>
         </div>
@@ -25,11 +25,11 @@
             <h3>¿Has sido alumn@ de Magister?</h3>
             <p><a class="arrow" href="#">Consulta Condiciones</a></p>
             <div class="flexbox">
-                <input class="radio" type="radio" name="alumno" id="no">
+                <input class="radio" type="radio" name="alumno" id="no" value="no" [(ngModel)]="formData.antiguoAlumno">
                 <label class="radio" for="no">No</label>
-                <input class="radio" type="radio" name="alumno" id="si">
+                <input class="radio" type="radio" name="alumno" id="si" value="si" [(ngModel)]="formData.antiguoAlumno">
                 <label class="radio" for="si">Sí</label>
-                <input class="radio" type="radio" name="alumno" id="si2017">
+                <input class="radio" type="radio" name="alumno" id="si2017" value="si2017" [(ngModel)]="formData.antiguoAlumno">
                 <label class="radio" for="si2017">Sí, después de 2017</label>
             </div>
         </div>
@@ -40,6 +40,6 @@
         </div>
     </form> 
     <div id="button">
-        <input class="next-btn" type="button" value="Siguiente" (click)="nextPage()">
+        <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath)">
     </div>
 </div>

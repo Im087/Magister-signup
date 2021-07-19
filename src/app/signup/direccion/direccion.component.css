@@ -1,5 +1,4 @@
 #title {
-    background-color: wheat;
     margin: 144px 368px 66px 368px;
     align-self: center;
 }
@@ -11,14 +10,12 @@
 }
 
 #form {
-    background-color: honeydew;
     width: 100%;
     max-width: 1600px;
     align-self: center;
 }
 
 #comunidad {
-    background-color: seashell;
     margin: 0 100px 68px 100px;
 }
 
@@ -28,7 +25,6 @@
 }
 
 #direccion {
-    background-color: ivory;
     margin: 0 100px 68px 100px;
 }
 
@@ -38,14 +34,12 @@
 }
 
 div.flexbox {
-    background-color: lightgray;
     margin: 0 100px 70px 100px;
     display: flex;
     justify-content: space-between;
 }
 
 div.flexbox > div {
-    background-color: whitesmoke;
     margin-right: 54px;
     flex: 1 0 auto;
 }
@@ -60,7 +54,6 @@ div.flexbox > div > input {
 }
 
 #condicion {
-    background-color:wheat;
     min-width: 788px;
     margin: 0 100px 60px 100px;
 }
