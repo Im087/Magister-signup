@@ -6,12 +6,18 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Download
 
+```
 git clone git@github.com:Im087/Magister-signup.git
+```
 
 ## Install
 
+```
 npm install
+```
 
 ## Run
 
+```
 ng serve --open
+```
