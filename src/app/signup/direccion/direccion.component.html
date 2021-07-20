@@ -49,14 +49,14 @@
                 <input class="info" type="checkbox" name="legal" id="legal" required [(ngModel)]="formData.legal" #legal="ngModel">
                 <span class="info"></span>
             </label>
-            <div class="alert-below" *ngIf="legal.errors?.required && tryGo">
+            <div class="alert-below legal" *ngIf="legal.errors?.required && tryGo">
                 Condición no aceptada
             </div>
             <label class="info" for="proteccion">Acepto la <a href="#">protección de datos</a>
                 <input class="info" type="checkbox" name="proteccion" id="proteccion" required [(ngModel)]="formData.proteccion" #proteccion="ngModel">
                 <span class="info"></span>
             </label>
-            <div class="alert-below" *ngIf="proteccion.errors?.required && tryGo">
+            <div class="alert-below proteccion" *ngIf="proteccion.errors?.required && tryGo">
                 Condición no aceptada
             </div>
         </div>

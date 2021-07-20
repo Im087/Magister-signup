@@ -16,8 +16,6 @@ export class PagoComponent implements OnInit {
   tryGo: boolean = false; // true means that the user has tried to go next
   allValid: boolean; // true means that all inputs are valid
 
-  flag: boolean;
-
   // save client data in this object
   formData: any = {
     matriculaID: 1,
@@ -80,7 +78,7 @@ export class PagoComponent implements OnInit {
     this.validate();
 
     // if whole formData is valid, submit data to firestore
-    if(this.allValid == true) {
+    if(this.allValid === true) {
       this.firestore.readFirestore('matriculas').subscribe({
         next: (data: any) => {
           // get document count from firestore to calculate the ID for this submit
@@ -93,6 +91,9 @@ export class PagoComponent implements OnInit {
             }
             
             alert('Matrícula enviada con éxito');
+
+            // go to end page
+            this.router.navigate(['/startend', 'end']);
             
           }).catch((err) => {
             console.log(err);

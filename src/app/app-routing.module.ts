@@ -8,12 +8,17 @@ import { DireccionComponent } from './signup/direccion/direccion.component';
 import { ModalidadComponent } from './signup/modalidad/modalidad.component';
 import { PagoComponent } from './signup/pago/pago.component';
 import { RamaComponent } from './signup/rama/rama.component';
+import { StartEndComponent } from './start-end/start-end.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SignupComponent,
+    component: StartEndComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'startend/:status',
+    component: StartEndComponent
   },
   {
     path: 'signup',

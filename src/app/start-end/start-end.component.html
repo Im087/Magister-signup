@@ -1,0 +1,12 @@
+<div id="container">
+    <div id="logo"></div>
+    <h1 *ngIf="signup=='start'" class="start">¡Comencemos con tu matrícula!</h1>
+    <h1 *ngIf="signup=='end'" class="end">¡Gracias!<br>Tu reserva está en proceso</h1>
+    <p id="desc" *ngIf="signup=='start'" class="start">Para comenzar a especializarte, vamos a realizar unas preguntas para darte el mejor servicios</p>
+    <p id="desc" *ngIf="signup=='end'" class="end">La matrícula sólo será efectiva una vez se haya recibido el Pago por Tarjeta o Transferencia</p>
+    <div id="button">
+        <input *ngIf="signup=='start'" class="next-btn" type="button" value="Comenzar" (click)="goTo(nextPath, $event)">
+        <input *ngIf="signup=='end'" class="next-btn" type="button" value="Volver a Home" (click)="goTo(nextPath, $event)">
+        <input class="previous-btn" type="button" value="Volver atrás">
+    </div>
+</div>

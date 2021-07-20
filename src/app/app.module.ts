@@ -15,6 +15,7 @@ import { TarifaComponent } from './signup/tarifa/tarifa.component';
 import { DatosComponent } from './signup/datos/datos.component';
 import { DireccionComponent } from './signup/direccion/direccion.component';
 import { PagoComponent } from './signup/pago/pago.component';
+import { StartEndComponent } from './start-end/start-end.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PagoComponent } from './signup/pago/pago.component';
     TarifaComponent,
     DatosComponent,
     DireccionComponent,
-    PagoComponent
+    PagoComponent,
+    StartEndComponent
   ],
   imports: [
     BrowserModule,

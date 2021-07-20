@@ -1,0 +1,80 @@
+#container {
+    background-color: #0A3868;
+    align-items: center;
+}
+
+#logo {
+    background: url(../../assets/img/magister-logo.png) no-repeat;
+    background-size: 100%;
+    margin: 212px 0 81px 0;
+    width: 275px;
+    height: 88px;
+    flex: 0 0 auto;
+}
+
+h1.start {
+    margin-bottom: 56px;
+    width: 700px;
+    height: 70px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 70px;
+    letter-spacing: -1px;
+    text-align: center;
+    color: #FFFFFF;
+    flex: 0 0 auto;
+}
+
+h1.end {
+    margin-bottom: 48px;
+    width: 602px;
+    height: 140px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 70px;
+    letter-spacing: -1px;
+    text-align: center;
+    color: #FFFFFF;
+    flex: 0 0 auto;
+}
+
+#desc.start {
+    width: 334px;
+    height: 104px;
+    margin-bottom: 129px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    flex: 0 0 auto;
+}
+
+#desc.end {
+    width: 666px;
+    height: 52px;
+    margin-bottom: 111px;
+
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    flex: 0 0 auto;
+}
+
+#button {
+    margin-bottom: 212px;
+    flex: 0 0 auto;
+}

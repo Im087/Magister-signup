@@ -147,12 +147,12 @@ input.info:checked ~ span.info:after {
     top: 98px;
 }
 
-#condicion .alert-below:first-of-type {
+#condicion .alert-below.legal {
     width: 275px;
     top: 35px;
 }
 
-#condicion .alert-below:last-of-type {
+#condicion .alert-below.proteccion {
     width: 295px;
     top: 35px;
     left: 475px;

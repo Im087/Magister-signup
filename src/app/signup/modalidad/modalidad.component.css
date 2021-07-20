@@ -15,7 +15,7 @@
 }
 
 #modalidad {
-    margin: 0 25px 68px 100px;
+    margin: 0 80px 68px 100px;
     position: relative;
 }
 
@@ -27,7 +27,7 @@
 
 #modalidad label.radio {
     width: 330px;
-    margin: 24px 75px -8px 0;
+    margin: 24px 20px -8px 0;
     flex: 0 0 auto;
 }
 
