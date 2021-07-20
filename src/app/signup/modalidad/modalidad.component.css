@@ -16,6 +16,7 @@
 
 #modalidad {
     margin: 0 25px 68px 100px;
+    position: relative;
 }
 
 #modalidad .flexbox {
@@ -32,6 +33,7 @@
 
 #horario {
     margin: 0 100px 85px 100px;
+    position: relative;
 }
 
 #horario label.radio {
@@ -43,4 +45,9 @@
 #button {
     margin-bottom: 39px;
     align-self: center;
+}
+
+.alert-right {
+    width: 506px;
+    left: 237px;
 }

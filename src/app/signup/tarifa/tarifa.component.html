@@ -2,18 +2,23 @@
     <div id="title">
         <h2>Selecciona tu tarifa </h2>
     </div>
-    <form id="form">
+    <form id="form" #form="ngForm">
         <div id="tarifa">
             <h3>Tarifas</h3>
             <p>(Selecciona una opción)</p>
+            <div class="alert-right" *ngIf="!form.form.valid && tryGo">
+                Ningúna opción seleccionada
+            </div>
             <div *ngFor="let tarifa of tarifasData">
-                <input class="radio" type="radio" name="tarifa" [id]="tarifa.tarifaID" [value]="tarifa.tarifaName" [(ngModel)]="formData.tarifa">
+                <input class="radio" type="radio" name="tarifa" [id]="tarifa.tarifaID" [value]="tarifa.tarifaName" required [(ngModel)]="formData.tarifa">
                 <label class="radio" [for]="tarifa.tarifaID">Número {{tarifa.tarifaID}}: {{tarifa.tarifaName}} - {{tarifa.tarifaPrice}} euros</label>
+                <div>{{tarifa.valid}}</div>
             </div>
         </div>
     </form>
+    <span class="allvalid" hidden>{{form.form.valid}}</span>
     <div id="button">
-        <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath)">
-        <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath)">
+        <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath, $event)">
+        <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath, $event)">
     </div>
 </div>

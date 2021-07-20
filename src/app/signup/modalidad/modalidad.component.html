@@ -2,13 +2,16 @@
     <div id="title">
         <h2>Elige el horario y modalidad que más te acomode</h2>
     </div>
-    <form id="form">
+    <form id="form" #form="ngForm">
         <div id="modalidad">
             <h3>Modalidad</h3>
             <p>(Selecciona una opción)</p>
+            <div class="alert-right" *ngIf="!form.form.valid && tryGo">
+                Ningúna opción seleccionada
+            </div>
             <div class="flexbox">
                 <div *ngFor="let modalidad of modalidadesData">
-                    <input class="radio" type="radio" name="modalidad" [id]="modalidad.modalidadName" [value]="modalidad.modalidadName" [(ngModel)]="formData.modalidad">
+                    <input class="radio" type="radio" name="modalidad" [id]="modalidad.modalidadName" [value]="modalidad.modalidadName" required [(ngModel)]="formData.modalidad" #modalidad="ngModel">
                     <label class="radio" [for]="modalidad.modalidadName">{{modalidad.modalidadName}}</label>
                 </div>
             </div>
@@ -16,15 +19,19 @@
         <div id="horario">
             <h3>Horario</h3>
             <p>(Selecciona una opción)</p>
-            <div *ngFor="let horario of horariosData">
-                <input class="radio" type="radio" name="horario" [id]="horario.horarioID" [value]="horario.horarioName" [(ngModel)]="formData.horario">
+            <div class="alert-right" *ngIf="!form.form.valid && tryGo">
+                Ningúna opción seleccionada
+            </div>
+            <div *ngFor="let horario of horariosData" >
+                <input #abc="ngModel" class="radio" type="radio" name="horario" [id]="horario.horarioID" [value]="horario.horarioName" required [(ngModel)]="formData.horario">
                 <label class="radio" [for]="horario.horarioID">{{horario.horarioName}}</label>
             </div>
         </div>
     </form>
+    <span class="allvalid" hidden>{{form.form.valid}}</span>
     <div id="button">
-        <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath)">
-        <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath)">
+        <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath, $event)">
+        <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath, $event)">
     </div>
 </div>
 

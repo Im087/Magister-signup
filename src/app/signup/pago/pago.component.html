@@ -2,11 +2,14 @@
     <div id="title">
         <h2>Forma de pago</h2>
     </div>
-    <form id="form">
+    <form id="form" #form="ngForm">
         <div id="formapago">
             <h3>¿Cómo prefieres abonar tu primer pago?</h3>
+            <div class="alert-right" *ngIf="pago.errors?.required && tryGo">
+                Ningúna opción seleccionada
+            </div>
             <div class="flexbox">
-                <input class="radio" type="radio" name="formapago" id="tarjeta" value="tarjeta" [(ngModel)]="formData.pago">
+                <input class="radio" type="radio" name="formapago" id="tarjeta" value="tarjeta" required [(ngModel)]="formData.pago" #pago="ngModel">
                 <label class="radio" for="tarjeta">Tarjeta de crédito/débito (recomendado)</label>
                 <input class="radio" type="radio" name="formapago" id="transferencia" value="transferencia" [(ngModel)]="formData.pago">
                 <label class="radio" for="transferencia">Transferencia bancaria</label>
@@ -15,15 +18,19 @@
         </div>
         <div id="recomendado">
             <h3>¿Vienes recomendado por alguien?</h3>
+            <div class="alert-right" *ngIf="recomendado.errors?.required && tryGo">
+                Ningúna opción seleccionada
+            </div>
             <div class="flexbox">
-                <input class="radio" type="radio" name="recomendado" id="no" value="no" [(ngModel)]="formData.recomendado">
+                <input class="radio" type="radio" name="recomendado" id="no" value="no"required [(ngModel)]="formData.recomendado" #recomendado="ngModel">
                 <label class="radio" for="no">No</label>
                 <input class="radio" type="radio" name="recomendado" id="si" value="si" [(ngModel)]="formData.recomendado">
                 <label class="radio" for="si">Sí</label>
             </div>
             <p><a class="arrow" href="#">Ver información legal</a></p>
         </div>
-    </form> 
+    </form>
+    <span class="allvalid" hidden>{{form.form.valid}}</span>
     <div id="button">
         <input class="next-btn" type="button" value="Enviar" (click)="submit()">
         <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath)">

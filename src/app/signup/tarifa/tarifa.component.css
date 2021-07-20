@@ -16,6 +16,7 @@
 }
 
 #tarifa {
+    position: relative;
     margin: 0 100px 259px 100px;
 }
 
@@ -28,4 +29,9 @@
 #button {
     margin-bottom: 39px;
     align-self: center;
+}
+
+.alert-right {
+    left: 231px;
+    width: 536px;
 }

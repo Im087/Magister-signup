@@ -2,34 +2,43 @@
     <div id="title">
         <h2>¿En qué te quieres especializar?</h2>
     </div>
-    <form id="form">    
+    <form id="form" #form="ngForm">    
         <div id="ramaprovincia">
             <div id="ramaOption">
                 <h3>Rama</h3>
                 <p>(Selecciona una opción)</p>
-                <select name="ramas" id="ramas" [(ngModel)]="formData.rama">
+                <select name="ramas" id="ramas" required [(ngModel)]="formData.rama" #rama="ngModel">
                     <option value="" selected hidden>Ej: Maestros - Audición y lenguaje</option>
                     <option [value]="rama.ramaName" *ngFor="let rama of ramasData">{{rama.ramaName}}</option>
                 </select>
+                <div class="alert-below" role="alert" *ngIf="(rama.errors?.required && rama.touched && tryGo) || (rama.errors?.required && rama.pristine && tryGo)">
+                    Ningúna opción seleccionada
+                </div>
             </div>
             <div id="provinciaOption">
                 <h3>Provincia</h3>
                 <p>(Selecciona una opción)</p>
-                <select name="provincias" id="provincias" [(ngModel)]="formData.provincia">
+                <select name="provincias" id="provincias" required [(ngModel)]="formData.provincia" #provincia="ngModel">
                     <option value="" selected hidden>Ej: Madrid</option>
                     <option [value]="provincia.provinciaName" *ngFor="let provincia of provinciasData">{{provincia.provinciaName}}</option>
                 </select>
+                <div class="alert-below" *ngIf="(provincia.errors?.required && provincia.touched && tryGo) || (provincia.errors?.required && provincia.pristine && tryGo)">
+                    Ningúna opción seleccionada
+                </div>
             </div>
         </div>
         <div id="alumno">
             <h3>¿Has sido alumn@ de Magister?</h3>
             <p><a class="arrow" href="#">Consulta Condiciones</a></p>
+            <div class="alert-right" *ngIf="alumno.errors?.required && tryGo">
+                Ningúna opción seleccionada
+            </div>
             <div class="flexbox">
-                <input class="radio" type="radio" name="alumno" id="no" value="no" [(ngModel)]="formData.antiguoAlumno">
+                <input class="radio" type="radio" name="alumno" id="no" value="no" required [(ngModel)]="formData.antiguoAlumno" #alumno="ngModel">
                 <label class="radio" for="no">No</label>
-                <input class="radio" type="radio" name="alumno" id="si" value="si" [(ngModel)]="formData.antiguoAlumno">
+                <input class="radio" type="radio" name="alumno" id="si" value="si" required [(ngModel)]="formData.antiguoAlumno">
                 <label class="radio" for="si">Sí</label>
-                <input class="radio" type="radio" name="alumno" id="si2017" value="si2017" [(ngModel)]="formData.antiguoAlumno">
+                <input class="radio" type="radio" name="alumno" id="si2017" value="si2017" required [(ngModel)]="formData.antiguoAlumno">
                 <label class="radio" for="si2017">Sí, después de 2017</label>
             </div>
         </div>
@@ -38,7 +47,8 @@
             <p><a class="arrow" href="#">Consulta Condiciones</a></p>
             <input type="button" value="Material mes a mes">
         </div>
-    </form> 
+    </form>
+    <span class="allvalid" hidden>{{form.form.valid}}</span>
     <div id="button">
         <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath)">
     </div>

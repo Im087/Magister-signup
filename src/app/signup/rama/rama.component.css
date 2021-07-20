@@ -21,6 +21,7 @@
 }
 
 #ramaOption, #provinciaOption {
+    position: relative;
     margin-right: 129px;
     flex: 1 0 auto;
 }
@@ -30,7 +31,9 @@
 }
 
 #alumno {
+    position: relative;
     margin: 0 100px 68px 100px;
+    min-width: 307px;
 }
 
 #alumno .flexbox {
@@ -51,6 +54,7 @@
 
 #material {
     margin: 0 100px 90px 100px;
+    min-width: 307px;
 }
 
 #material input {
@@ -78,4 +82,14 @@
 #button {
     margin-bottom: 79px;
     align-self: center;
+}
+
+.alert-below {
+    top: 124px;
+    width: 334px;
+}
+
+.alert-right {
+    left: 317px;
+    width: 480px;
 }

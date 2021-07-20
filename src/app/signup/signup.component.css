@@ -27,6 +27,10 @@
     background: url(../../assets/img/style-circle.png) no-repeat;
 }
 
+/* a {
+    pointer-events: none
+} */
+
 #step-list li a:link, a:visited {
     color: #577294;
     text-decoration: none;

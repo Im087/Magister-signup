@@ -2,28 +2,41 @@
     <div id="title">
         <h2>Tus datos personales</h2>
     </div>
-    <form id="form">
+    <form id="form" #form="ngForm">
         <div id="nombre">
             <h3>Nombre completo</h3>
-            <input type="text" name="nombre" placeholder="Ej: Camila Perez Sánchez" value="abc" [(ngModel)]="formData.nombre">
+            <input type="text" name="nombre" placeholder="Ej: Camila Perez Sánchez" value="abc" required [(ngModel)]="formData.nombre" #nombre="ngModel">
+            <div class="alert-below" *ngIf="(nombre.untouched && tryGo) || (nombre.errors?.required && nombre.pristine && tryGo) || (nombre.errors?.required && tryGo)">
+                Nombre no válido
+            </div>
         </div>
         <div class="flexbox">
             <div id="dni">
                 <h3>DNI - NIE</h3>
-                <input type="text" name="dni" placeholder="Ej: Y56748659P" [(ngModel)]="formData.dni">
+                <input type="text" name="dni" placeholder="Ej: Y56748659P" required maxlength="10" minlength="5" [(ngModel)]="formData.dni" #dni="ngModel">
+                <div class="alert-below" *ngIf="(dni.untouched && tryGo) || (dni.errors?.required && dni.pristine && tryGo) || (dni.errors?.required && tryGo) || (dni.invalid && tryGo)">
+                    Documento no válido
+                </div>
             </div>
             <div id="movil">
                 <h3>Móvil</h3>
-                <input type="text" name="movil" placeholder="Ej: 654789735" [(ngModel)]="formData.movil">
+                <input type="text" name="movil" placeholder="Ej: 654789735" required maxlength="9" minlength="9" [(ngModel)]="formData.movil" #movil="ngModel">
+                <div class="alert-below" *ngIf="(movil.untouched && tryGo) || (movil.errors?.required && movil.pristine && tryGo) || (movil.errors?.required && tryGo) || (movil.invalid && tryGo)">
+                    Número no válido
+                </div>
             </div>
             <div id="email">
                 <h3>Email</h3>
-                <input type="email" name="email" placeholder="Ej: camila.per.san@gmail.com" [(ngModel)]="formData.email">
+                <input type="email" name="email" placeholder="Ej: camila.per.san@gmail.com" required email [(ngModel)]="formData.email" #email="ngModel">
+                <div class="alert-below" *ngIf="(email.untouched && tryGo) || (email.errors?.required && email.pristine && tryGo) || (email.errors?.required && tryGo) || (email.invalid && tryGo)">
+                    Email no válido
+                </div>
             </div>
         </div>
     </form>
+    <span class="allvalid" hidden>{{form.form.valid}}</span>
     <div id="button">
-        <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath)">
-        <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath)">
+        <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath, $event)">
+        <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath, $event)">
     </div>
 </div>

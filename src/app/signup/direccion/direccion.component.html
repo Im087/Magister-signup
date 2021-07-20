@@ -2,46 +2,68 @@
     <div id="title">
         <h2>Tu dirección</h2>
     </div>
-    <form id="form">
+    <form id="form" #form="ngForm">
         <div id="comunidad">
             <h3>Comunidad de Exámen</h3>
             <p>(Selecciona una opción)</p>
-            <select name="comunidad" [(ngModel)]="formData.comunidad">
+            <select name="comunidad" required [(ngModel)]="formData.comunidad" #comunidad="ngModel">
                 <option value="" selected hidden>Ej: Madrid</option>
                 <option [value]="comunidad.comunidadName" *ngFor="let comunidad of comunidadesData">{{comunidad.comunidadName}}</option>
             </select>
+            <div class="alert-below" *ngIf="(comunidad.errors?.required && comunidad.touched && tryGo) || (comunidad.errors?.required && comunidad.pristine && tryGo)">
+                Ningúna opción seleccionada
+            </div>
         </div>
         <div id="direccion">
             <h3>Dirección</h3>
-            <input type="text" name="nombre" placeholder="Ej: Calle Ramiro de Maxtu, 10, 4D" [(ngModel)]="formData.direccion">
+            <input type="text" name="nombre" placeholder="Ej: Calle Ramiro de Maxtu, 10, 4D" required [(ngModel)]="formData.direccion" #direccion="ngModel">
+            <div class="alert-below" *ngIf="(direccion.untouched && tryGo) || (direccion.errors?.required && direccion.pristine && tryGo) || (direccion.errors?.required && tryGo)">
+                Dirección no válida
+            </div>
         </div>
         <div class="flexbox">
             <div id="localidad">
                 <h3>Localidad</h3>
-                <input type="text" name="localidad" placeholder="Ej: Madrid" [(ngModel)]="formData.localidad">
+                <input type="text" name="localidad" placeholder="Ej: Madrid" required [(ngModel)]="formData.localidad" #localidad="ngModel">
+                <div class="alert-below" *ngIf="(localidad.untouched && tryGo) || (localidad.errors?.required && localidad.pristine && tryGo) || (localidad.errors?.required && tryGo)">
+                    Localidad no válida
+                </div>
             </div>
             <div id="provincia">
                 <h3>Provincia</h3>
-                <input type="text" name="provincia" placeholder="Ej: Madrid" [(ngModel)]="formData.provincia">
+                <input type="text" name="provincia" placeholder="Ej: Madrid" required [(ngModel)]="formData.provincia" #provincia="ngModel">
+                <div class="alert-below" *ngIf="(provincia.untouched && tryGo) || (provincia.errors?.required && provincia.pristine && tryGo) || (provincia.errors?.required && tryGo)">
+                    Provincia no válida
+                </div>
             </div>
             <div id="cp">
                 <h3>Código Postal</h3>
-                <input type="email" name="cp" placeholder="Ej: 28040" [(ngModel)]="formData.cp">
+                <input type="email" name="cp" placeholder="Ej: 28040" required maxlength="5" minlength="5" [(ngModel)]="formData.cp" #cp="ngModel">
+                <div class="alert-below" *ngIf="(cp.untouched && tryGo) || (cp.errors?.required && cp.pristine && tryGo) || (cp.errors?.required && tryGo) || (cp.invalid && tryGo)">
+                    Código postal no válido
+                </div>
             </div>
         </div>
         <div id="condicion">     
             <label class="info"for="legal">Acepto la <a href="#">información legal</a>
-                <input class="info" type="checkbox" name="legal" id="legal" [(ngModel)]="formData.legal">
+                <input class="info" type="checkbox" name="legal" id="legal" required [(ngModel)]="formData.legal" #legal="ngModel">
                 <span class="info"></span>
             </label>
+            <div class="alert-below" *ngIf="legal.errors?.required && tryGo">
+                Condición no aceptada
+            </div>
             <label class="info" for="proteccion">Acepto la <a href="#">protección de datos</a>
-                <input class="info" type="checkbox" name="proteccion" id="proteccion" [(ngModel)]="formData.proteccion">
+                <input class="info" type="checkbox" name="proteccion" id="proteccion" required [(ngModel)]="formData.proteccion" #proteccion="ngModel">
                 <span class="info"></span>
             </label>
+            <div class="alert-below" *ngIf="proteccion.errors?.required && tryGo">
+                Condición no aceptada
+            </div>
         </div>
     </form>
+    <span class="allvalid" hidden>{{form.form.valid}}</span>
     <div id="button">
-        <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath)">
-        <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath)">
+        <input class="next-btn" type="button" value="Siguiente" (click)="goTo(nextPath, $event)">
+        <input class="previous-btn" type="button" value="Volver atrás" (click)="goTo(previousPath, $event)">
     </div>
 </div>

@@ -16,12 +16,17 @@
 }
 
 #nombre {
+    position: relative;
     margin: 0 100px 68px 100px;
 }
 
 #nombre input {
     width: 100%;
     min-width: 788px;
+}
+
+#dni, #movil, #email {
+    position: relative;
 }
 
 div.flexbox {
@@ -47,4 +52,15 @@ div.flexbox > div > input {
 #button {
     margin-bottom: 39px;
     align-self: center;
+}
+
+#nombre .alert-below {
+    width: 100%;
+    min-width: 786px;
+    top: 98px;
+}
+
+#dni .alert-below, #movil .alert-below, #email .alert-below {
+    width: 100%;
+    top: 98px;
 }

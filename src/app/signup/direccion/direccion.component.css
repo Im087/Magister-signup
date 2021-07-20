@@ -16,6 +16,7 @@
 }
 
 #comunidad {
+    position: relative;
     margin: 0 100px 68px 100px;
 }
 
@@ -25,12 +26,17 @@
 }
 
 #direccion {
+    position: relative;
     margin: 0 100px 68px 100px;
 }
 
 #direccion input {
     width: 100%;
     min-width: 788px;
+}
+
+#localidad, #provincia, #cp {
+    position: relative;
 }
 
 div.flexbox {
@@ -54,6 +60,7 @@ div.flexbox > div > input {
 }
 
 #condicion {
+    position: relative;
     min-width: 788px;
     margin: 0 100px 60px 100px;
 }
@@ -127,4 +134,26 @@ input.info:checked ~ span.info:after {
 #button {
     margin-bottom: 39px;
     align-self: center;
+}
+
+#comunidad .alert-below, #direccion .alert-below {
+    width: 100%;
+    min-width: 786px;
+
+}
+
+#localidad .alert-below, #provincia .alert-below, #cp .alert-below {
+    width: 100%;
+    top: 98px;
+}
+
+#condicion .alert-below:first-of-type {
+    width: 275px;
+    top: 35px;
+}
+
+#condicion .alert-below:last-of-type {
+    width: 295px;
+    top: 35px;
+    left: 475px;
 }

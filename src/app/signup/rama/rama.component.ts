@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import * as $ from 'jquery';
+
 import { FirestoreService } from '../../services/firestore.service';
 import { StorageService } from '../../services/storage.service';
 
@@ -12,6 +14,8 @@ import { StorageService } from '../../services/storage.service';
 export class RamaComponent implements OnInit {
 
   nextPath: string = 'modalidad';
+  tryGo: boolean = false; // true means that the user has tried to go next
+  allValid: boolean; // true meas that all inputs are valid
 
   // save firestore data
   ramasData: any[] = [];
@@ -57,7 +61,17 @@ export class RamaComponent implements OnInit {
     // save data to storage before leaving the page 
     this.storage.addStorage(this.formData);
 
-    this.router.navigate(['/signup', path]);
+    // change the status
+    this.tryGo = true;
+
+    // form wil be valid if all inputs are valid, convert the string into boolean value
+    this.allValid = JSON.parse($('span.allvalid').text()); 
+    
+    // permit to continue if all inputs are valid
+    if(this.allValid) {
+      this.router.navigate(['/signup', path]);
+    }
+
   }
 
 }
